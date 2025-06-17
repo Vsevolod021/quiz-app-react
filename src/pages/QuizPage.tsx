@@ -1,5 +1,11 @@
+import { Quiz } from '../modules/quiz';
+
 const QuizPage = () => {
-  return <div>QuizPage</div>;
+  return (
+    <div className="quiz-page">
+      <Quiz />
+    </div>
+  );
 };
 
 export default QuizPage;
