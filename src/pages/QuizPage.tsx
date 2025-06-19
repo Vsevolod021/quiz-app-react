@@ -1,11 +1,7 @@
 import { Quiz } from '../modules/quiz';
 
 const QuizPage = () => {
-  return (
-    <div className="quiz-page">
-      <Quiz />
-    </div>
-  );
+  return <Quiz />;
 };
 
 export default QuizPage;

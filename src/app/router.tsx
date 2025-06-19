@@ -1,8 +1,8 @@
 import { createBrowserRouter, Navigate, type RouteObject } from 'react-router-dom';
 
-import ResultPage from '../pages/ResultPage';
-import HomePage from '../pages/HomePage';
-import QuizPage from '../pages/QuizPage';
+import ResultPage from 'src/pages/ResultPage';
+import HomePage from 'src/pages/HomePage';
+import QuizPage from 'src/pages/QuizPage';
 import App from './App';
 
 const Result: RouteObject = { path: 'result', element: <ResultPage /> };

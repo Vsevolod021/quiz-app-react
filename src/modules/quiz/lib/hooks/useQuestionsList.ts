@@ -1,17 +1,19 @@
-import { useEffect, useState } from 'react';
-import { fetchQuizQuestions } from '../../api/quizApi';
-import type { QuestionDto } from '../../model/types';
+import { useAppDispatch, useAppSelector } from 'src/shared/model/store';
+import { useEffect } from 'react';
+
+import { loadQuizQuestions } from '../../model/slice';
 
 export function useQuestionsList() {
-  const [questionsList, setQuestionsList] = useState<QuestionDto[]>([]);
-  const [pending, setPending] = useState<boolean>(true);
+  const dispatch = useAppDispatch();
+
+  const status = useAppSelector((state) => state.quiz.status);
+  const questionsList = useAppSelector((state) => state.quiz.questions);
 
   useEffect(() => {
-    fetchQuizQuestions().then((data) => {
-      setQuestionsList(data);
-      setPending(false);
-    });
-  }, []);
+    if (status === 'idle') {
+      dispatch(loadQuizQuestions());
+    }
+  }, [dispatch, status]);
 
-  return { questionsList, pending };
+  return { questionsList, status };
 }

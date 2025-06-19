@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": 1,
-      "text": "какой вывод даст 'typeof null' в JavaScript?",
+      "text": "какой вывод вернет 'typeof null' в JavaScript?",
       "answers": ["object", "null", "undefined", "number"],
       "correct": 0
     },

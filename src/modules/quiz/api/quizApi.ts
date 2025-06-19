@@ -1,4 +1,5 @@
-import { jsonApiInstance } from '../../../shared/helpers/api';
+import { jsonApiInstance } from 'src/shared/api/api';
+
 import { type QuestionDto } from '../model/types';
 
 export const fetchQuizQuestions = async (): Promise<QuestionDto[]> => {
